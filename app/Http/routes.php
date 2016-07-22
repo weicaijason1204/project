@@ -28,6 +28,7 @@ Route::group(['middleware'=>['admin.login'],'prefix'=>'admin','namespace'=>'Admi
     Route::resource('city','CityController');
     Route::resource('hospital','HospitalController');
     Route::resource('reservation','ReservationController');
+    Route::resource('admin','AdminController');
 });
 
 Route::any('doctor/login','Doctor\LoginController@login');

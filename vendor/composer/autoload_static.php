@@ -264,13 +264,14 @@ class ComposerStaticInitb4e890936239d9a7f407825569469c25
     );
 
     public static $classMap = array (
+        'CreateAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_21_090750_create_admins_table.php',
         'CreateCitiesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_04_162129_create_cities_table.php',
         'CreateDeseaseDoctorTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_04_204843_create_desease_doctor_table.php',
         'CreateDeseasesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_20_055102_create_deseases_table.php',
         'CreateDoctorsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_20_230724_create_doctors_table.php',
         'CreateHospitalsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_04_162215_create_hospitals_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreateReservationsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_21_001509_create_reservations_table.php',
+        'CreateReservationsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_21_013249_create_reservations_table.php',
         'CreateTumorsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_19_114509_create_tumors_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Models\Admin;
 use App\Http\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,26 +15,26 @@ class LoginController extends CommonController
 {
     public function login(){
         if($input = Input::all()){
-            $user = User::first();
-            if($user->name == $input['name'] && Crypt::decrypt($user->password) == $input['password']){
-                session(['user'=>$user]);
-                return view('admin.index');
-            }elseif($user->name != $input['name']){
+            $admin  = Admin::all();
+            $name = Admin::where('name',$input['name'])->value('name');
+            if($name != null){
+                $password = Admin::where('name',$name)->value('password');
+                if(Crypt::decrypt($password) == $input['password']){
+                    session(['admin'=>$admin]);
+                    return view('admin.index');
+                }else{
+                    return back()->with('msg','密码错误');
+                }
+            }else{
                 return back()->with('msg','用户名错误');
-            }elseif(Crypt::decrypt($user->password) != $input['password']){
-                return back()->with('msg','密码错误');
             }
         }else{
             return view('admin.login');
         }
     }
 
-    public function crypt(){
-        $str = '1234;';
-       echo Crypt::encrypt($str);
-    }
     public function quit(){
-        session(['user'=>null]);
+        session(['admin'=>null]);
        return redirect('admin/login');
     }
 }

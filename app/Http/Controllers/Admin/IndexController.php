@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Models\Admin;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
@@ -33,11 +34,11 @@ class IndexController extends CommonController
 
             $validator = Validator::make($input,$rules,$message);
             if($validator->passes()){
-                $user = User::first();
-                $_password = Crypt::decrypt($user->password);
+                $admin = Admin::first();
+                $_password = Crypt::decrypt($admin->password);
                 if($input['password_o']==$_password){
-                    $user->password = Crypt::encrypt($input['password']);
-                    $user->update();
+                    $admin->password = Crypt::encrypt($input['password']);
+                    $admin->update();
                     $validator = '密码修改成功！!';
                     return back()->withErrors($validator);
                 }else{

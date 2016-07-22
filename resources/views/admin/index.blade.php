@@ -13,7 +13,7 @@
 	<div class="top_right">
 		<ul>
 			<li>管理员：admin</li>
-			<li><a href="{{url('admin/pass')}}" target="main">修改密码</a></li>
+			<li><a href="{{url('admin/reset')}}" target="main">修改密码</a></li>
 			<li><a href="{{url('admin/quit')}}">退出</a></li>
 		</ul>
 	</div>
@@ -32,7 +32,7 @@
 				<li><a href="{{url('admin/doctor')}}" target="main"><i class="fa fa-fw fa-list-alt"></i>Doctor</a></li>
 				<li><a href="{{url('admin/tumor')}}" target="main"><i class="fa fa-fw fa-plus-square"></i>Tumor</a></li>
 				<li><a href="{{url('admin/desease')}}" target="main"><i class="fa fa-fw fa-list-ul"></i>Desease</a></li>
-				<li><a href="{{url('admin/user')}}" target="main"><i class="fa fa-fw fa-list-ul"></i>User</a></li>
+				<li><a href="{{url('admin/admin')}}" target="main"><i class="fa fa-fw fa-list-ul"></i>Admin</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -45,9 +45,4 @@
 </div>
 <!--主体部分 结束-->
 
-<!--底部 开始-->
-<div class="bottom_box">
-	CopyRight © 2015. Powered By <a href="http://www.houdunwang.com">http://www.houdunwang.com</a>.
-</div>
-<!--底部 结束-->
 @endsection
